@@ -22,9 +22,9 @@ select:focus > option:checked {
 }
 
 .form-scroll {
-  @apply px-[10px] h-[100vh] grid items-center lg:overflow-scroll py-[40px] text-center mx-auto;
+  @apply px-[10px] lg:h-[100vh] grid items-center lg:overflow-scroll py-[40px] text-center mx-auto;
 }
 
 .forgetPW-scroll {
-  @apply px-[10px] h-[100vh] lg:overflow-scroll py-[40px] text-center mx-auto;
+  @apply px-[10px] lg:h-[100vh] lg:overflow-scroll py-[40px] text-center mx-auto;
 }
