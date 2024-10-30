@@ -30,7 +30,7 @@ const Login = () => {
 
           {/* FORM DIV */}
 
-          <div className="px-[10px] mt-[150px] py-[40px] text-center mx-auto">
+          <div className="px-[10px] lg:mt-[150px] py-[40px] text-center mx-auto">
             <div className=" grid gap-4 lg:gap-8">
               <h1 className="text-[28px] font-[700]">
                 Login to <span className="text-[#37BBCA]">Peerwize</span>
