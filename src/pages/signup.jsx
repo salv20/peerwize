@@ -2,7 +2,10 @@ import { useState } from "react";
 import { BiShow, BiSolidHide } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Countries = ["country", "nigeria", "south africa", "ghana", "usa"];
+const Cities = ["city", "port harcourt", "cape town", "accra", "new york"];
+
+const Signup = () => {
   const [show, setShow] = useState(false);
 
   return (
@@ -33,15 +36,17 @@ const Login = () => {
           <div className="px-[10px]  py-[40px] text-center mx-auto">
             <div className=" grid gap-4 lg:gap-8">
               <h1 className="text-[28px] font-[700]">
-                Login to <span className="text-[#37BBCA]">Peerwize</span>
+                Sign up on <span className="text-[#37BBCA]">Peerwize</span>
               </h1>
 
               <div className="text-[16px] flex items-center gap-[8px] font-[400] justify-center">
                 <span className="signup_span" />
                 <p>
-                  Don’t have an account?{" "}
-                  <Link to="signup" className="text-[#37BBCA]">
-                    Sign up
+                  Already have an account?{" "}
+                  <Link to="/" className="text-[#37BBCA]">
+                    {" "}
+                    {/* PATH TO LOGIN PAGE */}
+                    Login
                   </Link>
                 </p>
                 <span className="signup_span" />
@@ -50,10 +55,58 @@ const Login = () => {
 
             <form action="" className="py-4 pt-8 flex flex-col gap-y-6">
               <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                className="login_input"
+              />
+
+              <input
                 type="text"
-                id="email-no"
-                name="email-number"
-                placeholder="Email/Phone number"
+                id="firstName"
+                name="firstName"
+                placeholder="First name"
+                className="login_input"
+              />
+
+              <input
+                type="text"
+                id="LastName"
+                name="LastName"
+                placeholder="Last name"
+                className="login_input"
+              />
+
+              <select
+                name="country"
+                id="country"
+                className="login_input text-[#848484] capitalize"
+              >
+                {Countries.map((country, index) => (
+                  <option value={country} key={index}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                name="city"
+                id="city"
+                className="login_input text-[#848484] capitalize"
+              >
+                {Cities.map((city, index) => (
+                  <option value={city} key={index}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+
+              <input
+                type="number"
+                id="phoneNumber"
+                name="phoneNumber"
+                placeholder="Phone number"
                 className="login_input"
               />
 
@@ -77,16 +130,37 @@ const Login = () => {
                   />
                 </div>
 
-                <Link className="text-[#37BBCA] text-[13px] mt-[2px] flex w-fit">
-                  Forgot password?
-                </Link>
+                <p className="text-[13px] text-left text-[#848484] ">
+                  Minimum 8 characters including a number
+                </p>
+              </div>
+
+              <div className="relative">
+                <input
+                  type={!show ? "password" : "text"}
+                  id="ConfirmPassword"
+                  name="ConfirmPassword"
+                  placeholder="Confirm password"
+                  className="login_input"
+                />
+
+                <div className="absolute top-[10px] text-[#848484] cursor-pointer right-3 text-3xl">
+                  <BiShow
+                    className={show ? "hidden" : "block"}
+                    onClick={() => setShow(true)}
+                  />
+                  <BiSolidHide
+                    className={!show ? "hidden" : "block"}
+                    onClick={() => setShow(false)}
+                  />
+                </div>
               </div>
 
               <button
                 type="submit"
                 className="bg-[#37BBCA] text-[16px] text-[#FFFFFF] px-[12px] py-[11px] h-[46px] rounded-[4px]"
               >
-                Login
+                Sign up
               </button>
             </form>
 
@@ -107,4 +181,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
