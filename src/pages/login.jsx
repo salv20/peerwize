@@ -13,13 +13,12 @@ const Login = () => {
 
           <div className="relative hidden lg:block bg-frame_img bg-cover bg-no-repeat bg-center h-[100vh] w-[604px]">
             <div className="bg-[#088395CC] absolute w-full h-full blur-1">
-              <div className=" w-fit mx-auto ">
+              <div className="flex flex-col min-h-screen justify-center items-center">
                 <img
                   src="/Peerwize Logo.png"
                   alt="logo"
                   height="127.08px"
                   width="127.09px"
-                  className="mx-auto"
                 />
 
                 <p className="text-[#FBA04B] font-[700] text-[16px">
@@ -31,8 +30,8 @@ const Login = () => {
 
           {/* FORM DIV */}
 
-          <div className="py-[40px] text-center mx-auto">
-            <div className=" grid gap-10 ">
+          <div className="px-[10px]  py-[40px] text-center mx-auto">
+            <div className=" grid gap-4 lg:gap-8">
               <h1 className="text-[28px] font-[700]">
                 Login to <span className="text-[#37BBCA]">Peerwize</span>
               </h1>
@@ -78,14 +77,14 @@ const Login = () => {
                   />
                 </div>
 
-                <Link className="text-[#37BBCA] text-[13px] mt-[2px] text-left">
+                <Link className="text-[#37BBCA] text-[13px] mt-[2px] flex w-fit">
                   Forgot password?
                 </Link>
               </div>
 
               <button
                 type="submit"
-                className="bg-[#37BBCA] text-[16px] mt-[20px] text-[#FFFFFF] px-[12px] py-[11px] h-[46px] rounded-[4px]"
+                className="bg-[#37BBCA] text-[16px] text-[#FFFFFF] px-[12px] py-[11px] h-[46px] rounded-[4px]"
               >
                 Login
               </button>
@@ -104,8 +103,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
-      {/*  */}
     </section>
   );
 };
