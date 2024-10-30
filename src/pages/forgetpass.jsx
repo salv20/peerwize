@@ -26,7 +26,7 @@ const ForgetPassword = () => {
 
           {/* FORM DIV */}
 
-          <div className="px-[10px] py-[40px] lg:mt-[150px] text-center mx-auto">
+          <div className="px-[10px] py-[40px] text-center mx-auto">
             <div className=" grid gap-4 lg:gap-8">
               <h1 className="text-[28px] font-[700]">Forgot Password?</h1>
               <p className="text-[16px] font-[400]">

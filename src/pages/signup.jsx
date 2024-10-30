@@ -11,7 +11,7 @@ const Signup = () => {
   return (
     <section>
       <div className="container mx-auto lg:w-[100%] lg:p-0 lg:m-0 lg:max-w-full">
-        <div className="font-roboto lg:flex items-center gap-[28px] justify-between ">
+        <div className="font-roboto lg:flex  gap-[28px] justify-between ">
           {/* IMAGE DIV */}
 
           <div className="relative hidden lg:block bg-frame_img bg-cover bg-no-repeat bg-center h-[100vh] w-[604px]">
@@ -33,7 +33,7 @@ const Signup = () => {
 
           {/* FORM DIV */}
 
-          <div className="px-[10px]  py-[40px] text-center mx-auto">
+          <div className="px-[10px] h-[100vh] grid items-center overflow-scroll form-sign py-[40px] text-center mx-auto">
             <div className=" grid gap-4 lg:gap-8">
               <h1 className="text-[28px] font-[700]">
                 Sign up on <span className="text-[#37BBCA]">Peerwize</span>
