@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+  background-image: url("/Frame 19.png");
+  background-repeat: no-repeat;
+} */
+
+.login_input {
+  @apply w-full font-roboto  placeholder:text-[#848484] outline-none h-[46px] border-[1.25px] border-[#CECECE] px-[12px] py-[11px] h-[46px] rounded-[4px];
+}
+.signup_span {
+  @apply w-[153px] h-[0.75px] bg-[#CECECE] hidden md:block;
+}
