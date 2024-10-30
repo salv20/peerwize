@@ -131,7 +131,7 @@ const Signup = () => {
                 </div>
 
                 <p className="text-[13px] text-left text-[#848484] ">
-                  Minimum 8 characters including a number
+                  Minimum of 8 characters including a number
                 </p>
               </div>
 

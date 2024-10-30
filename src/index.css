@@ -4,10 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  background-image: url("/Frame 19.png");
-  background-repeat: no-repeat;
-} */
+select:focus > option:checked {
+  background: #37bbca !important;
+}
 
 .login_input {
   @apply w-full font-roboto font-[400]  placeholder:text-[#848484] outline-none h-[46px] border-[1.25px] border-[#CECECE] px-[12px] py-[11px] h-[46px] rounded-[4px];
