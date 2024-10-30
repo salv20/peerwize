@@ -6,7 +6,9 @@ export default {
       container: {
         padding: "15px",
       },
-      backgroundImage: 'url("/Frame 19.png")',
+      backgroundImage: {
+        frame_img: 'url("/Frame 19.png")',
+      },
     },
 
     fontFamily: {

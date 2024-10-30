@@ -10,7 +10,7 @@
 } */
 
 .login_input {
-  @apply w-full font-roboto  placeholder:text-[#848484] outline-none h-[46px] border-[1.25px] border-[#CECECE] px-[12px] py-[11px] h-[46px] rounded-[4px];
+  @apply w-full font-roboto font-[400]  placeholder:text-[#848484] outline-none h-[46px] border-[1.25px] border-[#CECECE] px-[12px] py-[11px] h-[46px] rounded-[4px];
 }
 .signup_span {
   @apply w-[153px] h-[0.75px] bg-[#CECECE] hidden md:block;
