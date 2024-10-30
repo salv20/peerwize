@@ -8,7 +8,7 @@ const ForgetPassword = () => {
           {/* IMAGE DIV */}
 
           <div className="relative hidden lg:block bg-frame_img bg-cover bg-no-repeat bg-center h-[100vh] w-[604px]">
-            <div className="bg-[#088395CC] absolute w-full h-full blur-1">
+            <div className="bg-[#088395CC] absolute w-full h-full">
               <div className="flex flex-col min-h-screen justify-center items-center">
                 <img
                   src="/Peerwize Logo.png"
@@ -26,7 +26,7 @@ const ForgetPassword = () => {
 
           {/* FORM DIV */}
 
-          <div className="px-[10px] py-[40px] text-center mx-auto">
+          <div className="forgetPW-scroll">
             <div className=" grid gap-4 lg:gap-8">
               <h1 className="text-[28px] font-[700]">Forgot Password?</h1>
               <p className="text-[16px] font-[400]">
@@ -34,7 +34,7 @@ const ForgetPassword = () => {
               </p>
             </div>
 
-            <form action="" className="py-4 pt-8 flex flex-col gap-y-6">
+            <form action="" className="py-4 pt-8 flex flex-col gap-y-6 w-full">
               <input
                 type="email"
                 id="email"

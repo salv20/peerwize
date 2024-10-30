@@ -15,7 +15,7 @@ const Signup = () => {
           {/* IMAGE DIV */}
 
           <div className="relative hidden lg:block bg-frame_img bg-cover bg-no-repeat bg-center h-[100vh] w-[604px]">
-            <div className="bg-[#088395CC] absolute w-full h-full blur-1">
+            <div className="bg-[#088395CC] absolute w-full h-full">
               <div className="flex flex-col min-h-screen justify-center items-center">
                 <img
                   src="/Peerwize Logo.png"
@@ -33,7 +33,7 @@ const Signup = () => {
 
           {/* FORM DIV */}
 
-          <div className="px-[10px] h-[100vh] grid items-center overflow-scroll form-sign py-[40px] text-center mx-auto">
+          <div className="form-scroll">
             <div className=" grid gap-4 lg:gap-8">
               <h1 className="text-[28px] font-[700]">
                 Sign up on <span className="text-[#37BBCA]">Peerwize</span>

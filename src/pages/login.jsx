@@ -12,7 +12,7 @@ const Login = () => {
           {/* IMAGE DIV */}
 
           <div className="relative hidden lg:block bg-frame_img bg-cover bg-no-repeat bg-center h-[100vh] w-[604px]">
-            <div className="bg-[#088395CC] absolute w-full h-full blur-1">
+            <div className="bg-[#088395CC] absolute w-full h-full">
               <div className="flex flex-col min-h-screen justify-center items-center">
                 <img
                   src="/Peerwize Logo.png"
@@ -30,79 +30,81 @@ const Login = () => {
 
           {/* FORM DIV */}
 
-          <div className="px-[10px] py-[40px] text-center mx-auto">
-            <div className=" grid gap-4 lg:gap-8">
-              <h1 className="text-[28px] font-[700]">
-                Login to <span className="text-[#37BBCA]">Peerwize</span>
-              </h1>
+          <div className="form-scroll">
+            <div className="">
+              <div className=" grid gap-4 lg:gap-8">
+                <h1 className="text-[28px] font-[700]">
+                  Login to <span className="text-[#37BBCA]">Peerwize</span>
+                </h1>
 
-              <div className="text-[16px] flex items-center gap-[8px] font-[400] justify-center">
-                <span className="signup_span" />
-                <p>
-                  Don’t have an account?{" "}
-                  <Link to="signup" className="text-[#37BBCA]">
-                    Sign up
-                  </Link>
-                </p>
-                <span className="signup_span" />
+                <div className="text-[16px] flex items-center gap-[8px] font-[400] justify-center">
+                  <span className="signup_span" />
+                  <p>
+                    Don’t have an account?{" "}
+                    <Link to="signup" className="text-[#37BBCA]">
+                      Sign up
+                    </Link>
+                  </p>
+                  <span className="signup_span" />
+                </div>
               </div>
-            </div>
 
-            <form action="" className="py-4 pt-8 flex flex-col gap-y-6">
-              <input
-                type="text"
-                id="email-no"
-                name="email-number"
-                placeholder="Email/Phone number"
-                className="login_input"
-              />
-
-              <div className="relative">
+              <form action="" className="py-4 pt-8 flex flex-col gap-y-6">
                 <input
-                  type={!show ? "password" : "text"}
-                  id="password"
-                  name="password"
-                  placeholder="Password"
+                  type="text"
+                  id="email-no"
+                  name="email-number"
+                  placeholder="Email/Phone number"
                   className="login_input"
                 />
 
-                <div className="absolute top-[10px] text-[#848484] cursor-pointer right-3 text-3xl">
-                  <BiShow
-                    className={show ? "hidden" : "block"}
-                    onClick={() => setShow(true)}
+                <div className="relative">
+                  <input
+                    type={!show ? "password" : "text"}
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    className="login_input"
                   />
-                  <BiSolidHide
-                    className={!show ? "hidden" : "block"}
-                    onClick={() => setShow(false)}
-                  />
+
+                  <div className="absolute top-[10px] text-[#848484] cursor-pointer right-3 text-3xl">
+                    <BiShow
+                      className={show ? "hidden" : "block"}
+                      onClick={() => setShow(true)}
+                    />
+                    <BiSolidHide
+                      className={!show ? "hidden" : "block"}
+                      onClick={() => setShow(false)}
+                    />
+                  </div>
+
+                  <Link
+                    to="forget"
+                    className="text-[#37BBCA] text-[13px] mt-[2px] flex w-fit"
+                  >
+                    Forgot password?
+                  </Link>
                 </div>
 
-                <Link
-                  to="forget"
-                  className="text-[#37BBCA] text-[13px] mt-[2px] flex w-fit"
+                <button
+                  type="submit"
+                  className="bg-[#37BBCA] text-[16px] text-[#FFFFFF] px-[12px] py-[11px] h-[46px] rounded-[4px]"
                 >
-                  Forgot password?
-                </Link>
-              </div>
+                  Login
+                </button>
+              </form>
 
-              <button
-                type="submit"
-                className="bg-[#37BBCA] text-[16px] text-[#FFFFFF] px-[12px] py-[11px] h-[46px] rounded-[4px]"
-              >
-                Login
-              </button>
-            </form>
-
-            <p className="font-roboto font-400 text-[13px]">
-              By continuing, you agree to our{" "}
-              <Link to="/" className="text-[#37BBCA]">
-                Terms of service
-              </Link>{" "}
-              and{" "}
-              <Link to="/" className="text-[#37BBCA]">
-                Privacy policy
-              </Link>{" "}
-            </p>
+              <p className="font-roboto font-400 text-[13px]">
+                By continuing, you agree to our{" "}
+                <Link to="/" className="text-[#37BBCA]">
+                  Terms of service
+                </Link>{" "}
+                and{" "}
+                <Link to="/" className="text-[#37BBCA]">
+                  Privacy policy
+                </Link>{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>
