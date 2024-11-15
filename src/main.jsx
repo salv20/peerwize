@@ -8,15 +8,15 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import Signup from "./pages/signup.jsx";
-import ForgetPassword from "./pages/forgetpass.jsx";
+import SignUpPage from "./pages/SignUpPage.jsx";
+import DashboardPage from "./pages/DashboardPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index Component={App} />
-      <Route path="signup" Component={Signup} />
-      <Route path="forget" Component={ForgetPassword} />
+      <Route path="signup" Component={SignUpPage} />
+      <Route path="dashboard" Component={DashboardPage} />
     </Route>
   )
 );

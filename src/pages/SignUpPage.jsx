@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { BiShow, BiSolidHide } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Countries = ["country", "nigeria", "south africa", "ghana", "usa"];
-const Cities = ["city", "port harcourt", "cape town", "accra", "new york"];
+const countyNames = ["country", "nigeria", "south africa", "ghana", "usa"];
+const cityNames = ["city", "port harcourt", "cape town", "accra", "new york"];
 
-const Signup = () => {
-  const [show, setShow] = useState(false);
+const SignUpPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
 
   return (
     <section>
@@ -18,13 +25,13 @@ const Signup = () => {
             <div className="bg-[#088395CC] absolute w-full h-full">
               <div className="flex flex-col min-h-screen justify-center items-center">
                 <img
-                  src="/Peerwize Logo.png"
+                  src="/logo.png"
                   alt="logo"
                   height="127.08px"
                   width="127.09px"
                 />
 
-                <p className="text-[#FBA04B] font-[700] text-[16px">
+                <p className="text-[#FBA04B] font-[700] text-[16px]">
                   connecting skills, creating futures...
                 </p>
               </div>
@@ -42,9 +49,9 @@ const Signup = () => {
               <div className="text-[16px] flex items-center gap-[8px] font-[400] justify-center">
                 <span className="signup_span" />
                 <p>
-                  Already have an account?{" "}
+                  Already have an account?&nbsp;
                   <Link to="/" className="text-[#37BBCA]">
-                    {" "}
+                    &nbsp;
                     {/* PATH TO LOGIN PAGE */}
                     Login
                   </Link>
@@ -53,13 +60,16 @@ const Signup = () => {
               </div>
             </div>
 
-            <form action="" className="py-4 pt-8 flex flex-col gap-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="py-4 pt-8 flex flex-col gap-y-6"
+            >
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="Email"
-                className="login_input"
+                className="auth_input"
               />
 
               <input
@@ -67,23 +77,23 @@ const Signup = () => {
                 id="firstName"
                 name="firstName"
                 placeholder="First name"
-                className="login_input"
+                className="auth_input"
               />
 
               <input
                 type="text"
-                id="LastName"
-                name="LastName"
+                id="lastName"
+                name="lastName"
                 placeholder="Last name"
-                className="login_input"
+                className="auth_input"
               />
 
               <select
                 name="country"
                 id="country"
-                className="login_input text-[#848484] capitalize"
+                className="auth_input text-[#848484] capitalize"
               >
-                {Countries.map((country, index) => (
+                {countyNames.map((country, index) => (
                   <option value={country} key={index}>
                     {country}
                   </option>
@@ -93,9 +103,9 @@ const Signup = () => {
               <select
                 name="city"
                 id="city"
-                className="login_input text-[#848484] capitalize"
+                className="auth_input text-[#848484] capitalize"
               >
-                {Cities.map((city, index) => (
+                {cityNames.map((city, index) => (
                   <option value={city} key={index}>
                     {city}
                   </option>
@@ -107,27 +117,31 @@ const Signup = () => {
                 id="phoneNumber"
                 name="phoneNumber"
                 placeholder="Phone number"
-                className="login_input"
+                className="auth_input"
               />
 
-              <div className="relative">
-                <input
-                  type={!show ? "password" : "text"}
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  className="login_input"
-                />
-
-                <div className="absolute top-[10px] text-[#848484] cursor-pointer right-3 text-3xl">
-                  <BiShow
-                    className={show ? "hidden" : "block"}
-                    onClick={() => setShow(true)}
+              <div>
+                <div className="auth_input flex items-center justify-between">
+                  <input
+                    type={!showPassword ? "password" : "text"}
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    className="outline-none w-full h-full"
                   />
-                  <BiSolidHide
-                    className={!show ? "hidden" : "block"}
-                    onClick={() => setShow(false)}
-                  />
+                  <button
+                    type="button"
+                    aria-label="showPassword"
+                    className="text-[#848484] text-3xl"
+                  >
+                    {showPassword ? (
+                      <BiShow onClick={() => setShowPassword(!showPassword)} />
+                    ) : (
+                      <BiSolidHide
+                        onClick={() => setShowPassword(!showPassword)}
+                      />
+                    )}
+                  </button>
                 </div>
 
                 <p className="text-[13px] text-left text-[#848484] ">
@@ -135,25 +149,29 @@ const Signup = () => {
                 </p>
               </div>
 
-              <div className="relative">
+              <div className="auth_input flex items-center justify-between">
                 <input
-                  type={!show ? "password" : "text"}
-                  id="ConfirmPassword"
-                  name="ConfirmPassword"
+                  type={!showForgotPassword ? "password" : "text"}
+                  id="confirmPassword"
+                  name="confirmPassword"
                   placeholder="Confirm password"
-                  className="login_input"
+                  className="outline-none w-full h-full"
                 />
-
-                <div className="absolute top-[10px] text-[#848484] cursor-pointer right-3 text-3xl">
-                  <BiShow
-                    className={show ? "hidden" : "block"}
-                    onClick={() => setShow(true)}
-                  />
-                  <BiSolidHide
-                    className={!show ? "hidden" : "block"}
-                    onClick={() => setShow(false)}
-                  />
-                </div>
+                <button
+                  type="button"
+                  aria-label="confirmPassword"
+                  className="text-[#848484] text-3xl"
+                >
+                  {showForgotPassword ? (
+                    <BiShow
+                      onClick={() => setShowForgotPassword(!showForgotPassword)}
+                    />
+                  ) : (
+                    <BiSolidHide
+                      onClick={() => setShowForgotPassword(!showForgotPassword)}
+                    />
+                  )}
+                </button>
               </div>
 
               <button
@@ -165,14 +183,15 @@ const Signup = () => {
             </form>
 
             <p className="font-roboto font-400 text-[13px]">
-              By continuing, you agree to our{" "}
+              By continuing, you agree to our&nbsp;
               <Link to="/" className="text-[#37BBCA]">
                 Terms of service
-              </Link>{" "}
-              and{" "}
+              </Link>
+              &nbsp; and&nbsp;
               <Link to="/" className="text-[#37BBCA]">
                 Privacy policy
-              </Link>{" "}
+              </Link>
+              &nbsp;
             </p>
           </div>
         </div>
@@ -181,4 +200,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUpPage;
