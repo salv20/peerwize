@@ -40,7 +40,7 @@ const slidesComponents = [
 
 const DashboardSlider = () => {
   return (
-    <div className="w-[95%] lg:w-[956px] mx-auto">
+    <div className="w-[95%] mx-auto">
       <Swiper
         breakpoints={{
           900: {
