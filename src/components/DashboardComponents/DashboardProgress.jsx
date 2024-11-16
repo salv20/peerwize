@@ -6,7 +6,7 @@ const mySkills = [
 
 const DashboardProgress = () => {
   return (
-    <div className="flex justify-center lg:flex-col gap-[8px]">
+    <div className="flex justify-center flex-col justify-self-center sm:flex-row lg:flex-col gap-[8px]">
       <article className="panel gap-[8px]">
         <div className="progress flex">
           <div className="flex items-start gap-[12px]">
@@ -31,7 +31,6 @@ const DashboardProgress = () => {
         {/*  */}
 
         <div className="progress grid">
-          {/*  */}
           <div className="flex justify-between">
             <div className="flex gap-[12px]">
               <img src="/teacher.png" alt="" />
@@ -42,7 +41,6 @@ const DashboardProgress = () => {
               <img src="/maximize.png" alt="" />
             </button>
           </div>
-          {/*  */}
 
           <div className="flex items-center">
             <p className="text-[#2C96A2] grid text-[11px] font-[700] gap-[4px]">
@@ -53,11 +51,9 @@ const DashboardProgress = () => {
             </p>
             <img src="/percent.png" alt="" height={40} width={40} />
           </div>
-
-          {/*  */}
         </div>
       </article>
-      {/*  */}
+
       <article className="panel gap-[16px]">
         <div className="p-[16px] flex items-center">
           <img src="/add.png" alt="" height={24} width={24} />
@@ -81,14 +77,13 @@ const DashboardProgress = () => {
             </div>
           ))}
         </div>
-        {/*  */}
+
         <div className="flex justify-end pb-[4px]">
           <button className="text-[#141414] w-fit text-[13px] px-[16px]">
             See more
           </button>
         </div>
       </article>
-      {/*  */}
     </div>
   );
 };
