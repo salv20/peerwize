@@ -43,7 +43,7 @@ const DashboardCalenderSection = () => {
 
   return (
     <section className="flex flex-col lg:flex-row items-center gap-[16px] px-[10px] sm:px-[16px] font-roboto sm:mx-auto">
-      <div>
+      <div className="w-full">
         <div className="calander">
           <div className="flex justify-between items-center">
             <div className="text-[24px] font-[900] ">

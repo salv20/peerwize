@@ -74,5 +74,5 @@ body::-webkit-scrollbar,
   @apply rounded-[16px] p-[12px] sm:w-[306px] flex flex-col box-border;
 }
 .calander {
-  @apply w-[100%] sm:w-[632px] grid gap-[24px] sm:gap-[30px] p-[16px] md:p-[30px] md:h-[526px] rounded-[16px];
+  @apply sm:w-[632px] grid gap-[24px] sm:gap-[30px] p-[16px] md:p-[30px] md:h-[526px] rounded-[16px];
 }

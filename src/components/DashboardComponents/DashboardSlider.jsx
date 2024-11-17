@@ -2,7 +2,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, Autoplay, Navigation, EffectFade } from "swiper/modules";
+import {
+  Pagination,
+  Autoplay,
+  Navigation,
+  EffectFade,
+  Keyboard,
+  Mousewheel,
+} from "swiper/modules";
+import SwiperCore from "swiper/core";
+import { FaPlus } from "react-icons/fa";
 
 const slidesComponents = [
   {
@@ -36,8 +45,20 @@ const slidesComponents = [
 ];
 
 const DashboardSlider = () => {
+  SwiperCore.use([Keyboard, Mousewheel]);
+
   return (
-    <div className="w-[95%] mx-auto">
+    <div className="w-[95%] text-[#141414] p-[12px] mx-auto font-roboto bg-[#F7FCFD]">
+      <div className="flex p-[8px] items-center justify-between">
+        <h1 className="h-[16px] font-[700] flex items-center gap-[8px]">
+          <span className="text-[#646a6a] text-[14px]">
+            <FaPlus />
+          </span>
+          My Feed
+        </h1>
+        <img src="/maximize.png" alt="" />
+      </div>
+
       <Swiper
         breakpoints={{
           900: {
@@ -60,14 +81,14 @@ const DashboardSlider = () => {
         pagination={{
           clickable: true,
         }}
+        keyboard={true}
+        direction="horizontal"
+        mousewheel={true}
         navigation={true}
-        modules={[EffectFade, Pagination, Navigation]}
+        modules={[EffectFade, Pagination, Navigation, Autoplay]}
       >
         {slidesComponents.map((slide, index) => (
-          <SwiperSlide
-            key={index}
-            className="py-[10px] mb-[30px] font-roboto text-[#141414] "
-          >
+          <SwiperSlide key={index} className="py-[10px] mb-[30px] ">
             <div className="grid gap-[8px]">
               <img src={slide.src} alt="" className="w-full" />
 

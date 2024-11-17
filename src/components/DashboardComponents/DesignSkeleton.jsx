@@ -17,12 +17,12 @@ const DesignSkeleton = () => {
           }  w-full flex flex-col gap-[20px] xxl:overflow-scroll`}
         >
           <DashboardNavBar openNav={openNav} setOpenNav={setOpenNav} />
-          {/* <div
+          <div
             className={`${openNav ? "blur-[1px] " : "blur-0"} xxl:blur-0`}
             onClick={() => setOpenNav(false)}
           >
             <Outlet openNav={openNav} setOpenNav={setOpenNav} />
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const DashboardNavBar = ({ openNav, setOpenNav }) => {
   return (
     <nav className="font-roboto shadow-[#1100FF29] shadow-sm  bg-[#F7FCFD]">
-      <div className="mx-auto container justify-between flex items-center px-[14px] xxl:pr-[80px] min-h-[116px]">
+      <div className="mx-auto container justify-between flex items-center px-[14px] xxl:pr-[80px] min-h-[80px] sm:min-h-[100px]">
         <h1 className="font-[700] text-[23px]">Dashboard</h1>
 
         <div>
