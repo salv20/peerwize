@@ -6,7 +6,7 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import DashboardProgress from "./DashboardProgress";
-import MySlider from "./DashboardSlider";
+
 const localizer = momentLocalizer(moment);
 
 const DashboardCalenderSection = () => {
@@ -42,7 +42,7 @@ const DashboardCalenderSection = () => {
   ];
 
   return (
-    <section className="lg:flex items-center gap-[16px] px-[10px] sm:px-[16px] font-roboto sm:mx-auto">
+    <section className="flex flex-col lg:flex-row items-center gap-[16px] px-[10px] sm:px-[16px] font-roboto sm:mx-auto">
       <div>
         <div className="calander">
           <div className="flex justify-between items-center">

@@ -1,10 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-// import required modules
 import { Pagination, Autoplay, Navigation, EffectFade } from "swiper/modules";
 
 const slidesComponents = [
@@ -12,29 +9,29 @@ const slidesComponents = [
     src: "book.png",
     category: "Course",
     title: "Conducting Interview for better research enviro...",
-    rating: 4,
-    ratingValue: "4.3 (2)",
+    ratingNumber: 4,
+    ratingValueText: "4.3 (2)",
   },
   {
     src: "tutor.png",
     category: "Course",
     title: "Conducting Interview for better research enviro...",
-    rating: 4,
-    ratingValue: "4.3 (2)",
+    ratingNumber: 4,
+    ratingValueText: "4.3 (2)",
   },
   {
     src: "student.png",
     category: "Course",
     title: "Conducting Interview for better research enviro...",
-    rating: 4,
-    ratingValue: "4.3 (2)",
+    ratingNumber: 4,
+    ratingValueText: "4.3 (2)",
   },
   {
-    src: "student.png",
+    src: "book.png",
     category: "Course",
     title: "Conducting Interview for better research enviro...",
-    rating: 4,
-    ratingValue: "4.3 (2)",
+    ratingNumber: 4,
+    ratingValueText: "4.3 (2)",
   },
 ];
 
@@ -79,8 +76,15 @@ const DashboardSlider = () => {
                 <p className="text-[16px] font-[400]"> {slide.title}</p>
 
                 <div className="flex items-center justify-between">
-                  <img src="/ratingstar.png" alt="" />
-                  {slide.ratingValue}
+                  <p className="flex">
+                    {Array(Math.round(slide.ratingNumber))
+                      .fill(0)
+                      .map((_, index) => (
+                        <img src="/ratingstar.png" alt="" key={index} />
+                      ))}
+                  </p>
+
+                  {slide.ratingValueText}
                 </div>
                 <button className="text-center w-full bg-[#37BBCA] h-[36px] rounded-[4px] text-[#FFFFFF] text-[13px]">
                   View Course

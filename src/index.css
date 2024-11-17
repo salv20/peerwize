@@ -7,7 +7,7 @@
 select:focus > option:checked {
   background: #37bbca !important;
 }
-
+body::-webkit-scrollbar,
 .dashboard_sideBar::-webkit-scrollbar,
 .form-scroll::-webkit-scrollbar,
 .forgetPW-scroll::-webkit-scrollbar {
@@ -21,6 +21,9 @@ select:focus > option:checked {
 .calander,
 .panel {
   box-shadow: 0px 2px 8px 0px #1100ff29;
+}
+.dashboard_sideBar {
+  z-index: 1000;
 }
 
 .rbc-calendar {
@@ -62,7 +65,7 @@ select:focus > option:checked {
 }
 
 .dashboard_sideBar {
-  @apply font-roboto lg:overflow-scroll w-[400px] xl:w-[540px] bg-[#2C96A2] pr-2 p-[38px];
+  @apply font-roboto min-w-[390px] h-[1,160px] bg-[#2C96A2] pr-[8px] p-[38px];
 }
 .progress {
   @apply w-full sm:w-[284px] bg-[#F7FCFD] py-[12px] px-[16px] rounded-[8px] items-start justify-between gap-[16px] font-roboto text-[#333333];

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa6";
 
-const DashboardSideBar = () => {
+const DashboardSideBar = ({ openNav }) => {
   const [activeButton, setActiveButton] = useState("Dashboard");
   const [dropDown, setDropDown] = useState(true);
 
@@ -28,7 +28,11 @@ const DashboardSideBar = () => {
   ];
 
   return (
-    <article className="dashboard_sideBar hidden xl:block">
+    <article
+      className={`${
+        !openNav ? "-translate-x-[1000px]" : "translate-x-0"
+      } dashboard_sideBar fixed xxl:relative xxl:translate-x-0 h-full transition-all duration-500 overflow-scroll`}
+    >
       <div className="grid gap-[120px] justify-around">
         <div className="grid gap-[32px] ">
           <img
