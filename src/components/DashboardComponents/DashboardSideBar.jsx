@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-const DashboardSideBar = ({ openNav }) => {
+const DashboardSideBar = ({ openNav, setCurrentPage }) => {
   const [activeButton, setActiveButton] = useState("Dashboard");
   const [dropDown, setDropDown] = useState(true);
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
+    setCurrentPage(buttonName);
   };
 
   const buttons = [
@@ -31,7 +33,7 @@ const DashboardSideBar = ({ openNav }) => {
     <article
       className={`${
         !openNav ? "-translate-x-[1000px]" : "translate-x-0"
-      } dashboard_sideBar fixed xxl:relative xxl:translate-x-0 h-full transition-all duration-500 overflow-scroll`}
+      } dashboard_sideBar`}
     >
       <div className="grid gap-[120px] justify-around">
         <div className="grid gap-[32px] ">
@@ -78,15 +80,20 @@ const DashboardSideBar = ({ openNav }) => {
                       ))}
                   </div>
                 ) : (
-                  <button
-                    key={button.name}
-                    className={`btn_dashboard ${
-                      activeButton === button.name ? "btn_dashboard_active" : ""
-                    }`}
-                    onClick={() => handleButtonClick(button.name)}
-                  >
-                    <img src={button.icon} alt={button.name} />
-                    <span>{button.name}</span>
+                  <button aria-label={button.name}>
+                    <Link
+                      to={`/${button.name}`}
+                      key={button.name}
+                      className={`btn_dashboard ${
+                        activeButton === button.name
+                          ? "btn_dashboard_active"
+                          : ""
+                      }`}
+                      onClick={() => handleButtonClick(button.name)}
+                    >
+                      <img src={button.icon} alt={button.name} />
+                      <span>{button.name}</span>
+                    </Link>
                   </button>
                 )}
               </div>

@@ -7,12 +7,12 @@ import {
   RouterProvider,
   createRoutesFromElements,
   Route,
-  Navigate,
 } from "react-router-dom";
 
 import SignUpPage from "./pages/SignUpPage.jsx";
-import DesignSkeleton from "./components/DashboardComponents/DesignSkeleton.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
+import DesignSkeleton from "./components/DesignSkeleton.jsx";
+import ProfiePage from "./pages/ProfiePage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,14 +21,10 @@ const router = createBrowserRouter(
 
       <Route path="signup" Component={SignUpPage} />
 
-      <Route path="dashboard" Component={DesignSkeleton}>
-        <Route index Component={DashboardPage} />
+      <Route path="/" Component={DesignSkeleton}>
+        <Route path="dashboard" Component={DashboardPage} />
+        <Route path="profile" Component={ProfiePage} />
       </Route>
-
-      <Route
-        path="/profile"
-        element={<Navigate to="/dashboard/profile" replace />}
-      />
     </Route>
   )
 );
