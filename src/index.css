@@ -65,7 +65,7 @@ body::-webkit-scrollbar,
 }
 
 .dashboard_sideBar {
-  @apply font-roboto min-w-[390px] h-[1,160px] bg-[#2C96A2] pr-[8px] p-[38px];
+  @apply font-roboto w-[75%] sm:min-w-[390px] max-w-[400px] h-[1,160px] bg-[#2C96A2] sm:pr-[8px] px-[10px] py-[38px] sm:px-[38px];
 }
 .progress {
   @apply w-full sm:w-[284px] bg-[#F7FCFD] py-[12px] px-[16px] rounded-[8px] items-start justify-between gap-[16px] font-roboto text-[#333333];
